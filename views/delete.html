@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"
+    />
+        <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css"
+    />
+    <link rel="icon" href="https://https--personal-website-tiagorangel2011.glitch.me/index/favicon.svg">
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+    <title>Delete a URL | URL shortner</title>
+  </head>
+  <body>
+    <center>
+             <img src="https://https--personal-website-tiagorangel2011.glitch.me/index/favicon.svg" style="width: 50px;">
+        <h1><a href="/" style="color: black"><svg style="width:24px;height:24px" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" />
+</svg></a> Delete a URL</h1>
+      <br />
+      <form>
+        <div>
+          <input type="text" name="slug" placeholder="slug" required />
+          <input
+            type="text"
+            name="token"
+            placeholder="token"
+            style="margin-top: 10px;"
+            required
+          />
+        </div>
+        <br />
+        <button type="submit">
+          <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+    <path fill="#fff" d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" />
+</svg>
+        </button>
+      </form>
+      <br />
+      <div id="response"></div>
+    </center>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js" integrity="sha512-wT7uPE7tOP6w4o28u1DN775jYjHQApdBnib5Pho4RB0Pgd9y7eSkAV1BTqQydupYDB9GBhTcQQzyNMPMV3cAew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="./delete.js"></script>
+  <script>
+   if (Cookies.get('key')) {
+   } else {
+     window.location.replace("/key");
+   }</script>
+</html>
