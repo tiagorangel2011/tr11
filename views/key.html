@@ -1,0 +1,96 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"
+    />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="stylesheet" href="./style.css" />
+    <style>
+    span.material-icons {
+    color: #ffffff!important;
+      }</style>
+    <link rel="icon" href="https://https--personal-website-tiagorangel2011.glitch.me/index/favicon.svg">
+    <title>Access Key | URL shortner</title>
+  </head>
+  <body onload="load()">
+    <center>
+      <img src="https://https--personal-website-tiagorangel2011.glitch.me/index/favicon.svg" style="width: 50px;">
+        <h1><a href="/" style="color: black"><svg style="width:24px;height:24px" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" />
+</svg></a> Set access key</h1>
+      <p>
+        Set here the access key to submit a URL
+      </p>
+        <div>
+          <input
+            type="text"
+            name="key"
+            placeholder="key"
+            style="margin-top: 10px;"
+            required
+                 id="key"
+          />
+        </div>
+        <br />
+        <button type="submit" onclick="setkey()">
+          <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+    <path fill="#fff" d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" />
+</svg>
+        </button>
+      <br />
+      <div id="response"></div>
+    </center>
+  </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js" integrity="sha512-wT7uPE7tOP6w4o28u1DN775jYjHQApdBnib5Pho4RB0Pgd9y7eSkAV1BTqQydupYDB9GBhTcQQzyNMPMV3cAew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    function load() {
+      if (Cookies.get('key')) {
+const notyf = new Notyf({
+  types: [
+    {
+      type: 'alert',
+      background: '#fcba03',
+        icon: {
+        className: 'material-icons',
+        tagName: 'span',
+        text: 'lightbulb'
+      }
+    }
+  ]
+});
+
+notyf.open({
+  type: 'alert',
+  message: 'Key already set, but you can change it'
+});
+        document.getElementById("key").value = "" + Cookies.get('key');
+      }
+    }
+    function setkey() {
+      if (document.getElementById("key").value.trim().length === 0) {
+                  const notyfer = new Notyf();
+  notyfer.error(`Please enter a key`);
+      } else {
+  Cookies.set('key', document.getElementById("key").value)
+          const notyf = new Notyf();
+  notyf.success(`Key activated. Redirecting you to the homepage`);
+        setTimeout(function(){
+   
+window.location.href = "/";
+}, 2000);
+      }
+    }
+  </script>
+</html>

@@ -1,0 +1,75 @@
+/* Set sizing and vertical centering. */
+:root {
+  --primary-color: #4285F4;
+  --primary-color-foreground: #ffffff;
+}
+* {
+  caret-color: var(--primary-color);
+}
+body,
+html {
+  height: 100%;
+  width: 100%;
+  min-height: 100%;
+ padding: 0 !important;
+}
+
+button {
+  background-color: var(--primary-color);
+}
+
+button:hover {
+  background-color: var(--primary-color);
+  
+  transform: scale(1.05);
+}
+button:focus, a:focus, input:focus {
+  box-shadow: none!important;
+}
+
+button:active {
+  
+  transform: scale(0.95);
+}
+
+input {
+  border: 2px solid #efefef;
+}
+
+input:focus {
+  border: 2px solid var(--primary-color);
+}
+
+body {
+  display: table;
+}
+
+center {
+  height: 100vh;
+  width: 100vw;
+  min-height: 100vh;
+  min-width: 100vw;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+/* Fix color of title. */
+
+.title {
+  color: #000000 !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  .title {
+    color: #FFFFFF !important;
+  }
+}
+::selection {
+  background-color: var(--primary-color);
+  color: var(--primary-color-foreground)
+}
+p, img, br, h1, h2, h3, h4, svg, .notyf {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
